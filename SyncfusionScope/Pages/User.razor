@@ -1,0 +1,41 @@
+﻿@page "/user"
+@using Syncfusion.Blazor.Grids
+
+
+
+
+<SfGrid DataSource="users">
+
+</SfGrid>
+
+
+
+
+@code {
+    private List<user> users = new List<user>();
+
+    protected override void OnInitialized()
+    {
+        users.Add(user1);
+        users.Add(user2);
+
+    }
+    user user1 = new user
+        {
+            Id = Guid.NewGuid(),
+            Name = "user1"
+        };
+    user user2 = new user
+        {
+            Id = Guid.NewGuid(),
+            Name = "user2"
+        };
+
+
+    public class user
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+    }
+
+}
